@@ -30,7 +30,6 @@ const Home = () => {
         curDate.getMonth(),
         1
       ).getTime();
-      console.log(firstDay);
 
       const lastDay = new Date(
         curDate.getFullYear(),
