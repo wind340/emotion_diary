@@ -1,8 +1,7 @@
 import React, { useReducer, useRef } from "react";
-
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import "./App.css";
 import Home from "./pages/Home";
 import Edit from "./pages/Edit";
 import New from "./pages/New";
@@ -33,7 +32,7 @@ const reducer = (state, action) => {
       break;
     }
     default:
-      return state;
+      return newState;
   }
   return newState;
 };
@@ -77,19 +76,19 @@ const dummyData = [
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
 
-  const dataId = useRef(0);
+  const dataId = useRef(6);
   //CREATE
   const onCreate = (date, content, emotion) => {
     dispatch({
       type: "CREATE",
       data: {
         id: dataId.current,
-        data: new Date(date).getTime(),
+        date: new Date(date).getTime(),
         content,
         emotion,
       },
     });
-    dataId.current += 1;
+    dataId.current++;
   };
   //REMOVE
   const onRemove = (targetId) => {
@@ -101,7 +100,7 @@ function App() {
       type: "EDIT",
       data: {
         id: targetId,
-        data: new Date(date).getTime(),
+        date: new Date(date).getTime(),
         content,
         emotion,
       },
@@ -116,7 +115,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
-              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
             </Routes>
           </div>
