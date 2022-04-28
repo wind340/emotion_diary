@@ -32,7 +32,7 @@ const ControlMenu = ({ value, onChange, optionList }) => {
 
 const DiaryList = ({ diaryList }) => {
   const navigate = useNavigate();
-  const [sortType, setSortType] = useState("lastest"); //최신순 정렬
+  const [sortType, setSortType] = useState("latest"); //최신순 정렬
   const [filter, setFilter] = useState("all");
 
   const getProcessedDiaryList = () => {
@@ -46,15 +46,15 @@ const DiaryList = ({ diaryList }) => {
     };
 
     //날짜 객체 비교함수
+    const copyList = JSON.parse(JSON.stringify(diaryList));
+
     const compare = (a, b) => {
-      if (sortType === "lastest") {
+      if (sortType === "latest") {
         return parseInt(b.date) - parseInt(a.date);
       } else {
         return parseInt(a.date) - parseInt(b.date);
       }
     };
-    const copyList = JSON.parse(JSON.stringify(diaryList));
-
     const filteredList =
       filter === "all" ? copyList : copyList.filter((it) => filterCallBack(it));
     const sortedList = filteredList.sort(compare);
@@ -95,5 +95,4 @@ const DiaryList = ({ diaryList }) => {
 DiaryList.defaultProps = {
   diaryList: [],
 };
-
 export default DiaryList;
