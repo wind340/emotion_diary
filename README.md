@@ -6,6 +6,11 @@ https://www.inflearn.com/course/한입-리액트/lecture/103540?tab=note&volume=
 
 여러 React Hook을 사용하며 로직분리와 최적화를 해보며 컴포넌트에 대한 이해를 필두로 기능에 조금더 초점을 맞춰서 코딩해봤습니다
 
+## "https://wind340.github.io/emotiondiary"
+
+
+Preciew
+--
 ![image](https://user-images.githubusercontent.com/83698052/170459908-97b69c76-24ee-428c-9aee-2fe9be9099cc.png)
 ![image](https://user-images.githubusercontent.com/83698052/170460654-7191bf86-c569-498f-9bde-0514a71a5b35.png)
 ![image](https://user-images.githubusercontent.com/83698052/170459988-02c5e5a3-0949-41f4-b91d-79afed4b28cd.png)
